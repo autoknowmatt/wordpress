@@ -25,7 +25,7 @@ RUN go install github.com/mailhog/MailHog@e6fa068 && \
     ln $GOPATH/bin/mhsendmail /usr/sbin/sendmail && \
     ln $GOPATH/bin/mhsendmail /usr/bin/mail &&\
     ### Apache ###
-    apt-get -y install apache2 && \
+    apt-get -y --force-yes install apache2 && \
     chown -R gitpod:gitpod /var/run/apache2 /var/lock/apache2 /var/log/apache2 && \
     echo "include $HOME/gitpod-wordpress/conf/apache.conf" > /etc/apache2/apache2.conf && \
     echo ". $HOME/gitpod-wordpress/conf/apache.env.sh" > /etc/apache2/envvars && \
